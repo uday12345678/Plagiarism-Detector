@@ -49,9 +49,10 @@ import re
 words1=[]
 for i in range(len(list1)):
 	file = open(list1[i], 'r')
-	text = file.read().lower()
+	# text = file.read().lower()
+	text = file.read()
 	file.close()
-	text = re.sub('[^a-z\ \']+', " ", text)
+	text = re.sub('[^a-zA-Z0-9\ \']+', " ", text)
 	words = list(text.split()) 
 	# print(words)
 	words1.append(words)
@@ -75,8 +76,8 @@ for i in range(len(words1)):
 	listfinal3.append(listfinal)
 for i in range(len(listfinal3)):
 	print(listfinal3[i])
-listfinal4 = []
-for i in range(len(listfinal)):
-	if listfinal[i] > 35:
-		listfinal4.append(listfinal[i])
-print(listfinal4)
+#listfinal4 = []
+#for i in range(len(listfinal)):
+	#if listfinal[i] > 35:
+	#	listfinal4.append(listfinal[i])
+#print(listfinal4)
